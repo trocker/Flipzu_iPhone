@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cEb-gt-zWd">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="P7J-n9-vZE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4K-KD-TTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController modalTransitionStyle="crossDissolve" id="BIf-d2-xG9" customClass="TWLoginController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7A4-M3-fjd">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="background_plain.png" id="lOU-Pn-6CI" userLabel="background">
+                                <rect key="frame" x="0.0" y="-20" width="320" height="558"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="logo-medium.png" id="kxE-fH-mM9" userLabel="medium_logo">
+                                <rect key="frame" x="83" y="10" width="160" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Twitter Username" textAlignment="center" minimumFontSize="17" background="textbox.png" id="uEL-LO-G01">
+                                <rect key="frame" x="48" y="125" width="225" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Twitter Password" textAlignment="center" minimumFontSize="17" background="textbox.png" id="jrK-BA-RDq">
+                                <rect key="frame" x="48" y="163" width="225" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="doTwitterLogin:" destination="BIf-d2-xG9" eventType="editingDidEndOnExit" id="vDM-KK-fth"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G4r-j1-fCY" userLabel="login_button">
+                                <rect key="frame" x="83" y="263" width="154" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="login.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doTwitterLogin:" destination="BIf-d2-xG9" eventType="touchUpInside" id="2Qw-Gw-QyZ"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="u9Z-39-9B8" userLabel="error_msg">
+                                <rect key="frame" x="80" y="228" width="159" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="1Va-cn-Ake" userLabel="spinner">
+                                <rect key="frame" x="141" y="225" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VB2-Ve-0WE"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="err_msg" destination="u9Z-39-9B8" id="46O-2Q-POX"/>
+                        <outlet property="loginTwitter" destination="G4r-j1-fCY" id="bAv-xl-IkG"/>
+                        <outlet property="mediumLogo" destination="kxE-fH-mM9" id="swb-7y-gVQ"/>
+                        <outlet property="passField" destination="jrK-BA-RDq" id="oSX-WI-oQC"/>
+                        <outlet property="spinner" destination="1Va-cn-Ake" id="zkC-Tp-u5G"/>
+                        <outlet property="userField" destination="uEL-LO-G01" id="nrd-Nf-k60"/>
+                        <segue destination="qUc-RQ-z6p" kind="push" identifier="goToTimeline" id="kqB-H6-kVB"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1278" y="8"/>
+        </scene>
+        <scene sceneID="SS6-oQ-OD3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Oi-dw-T8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="qUc-RQ-z6p" customClass="TimelineViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SYb-PV-2uB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="0.0" id="pV9-ok-2Fp" userLabel="bcastTable">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qUc-RQ-z6p" id="qxi-oJ-p3x"/>
+                                    <outlet property="delegate" destination="qUc-RQ-z6p" id="peM-nS-AHT"/>
+                                </connections>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wzk-9j-AUy" userLabel="nowPlaying">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="                                                                       " backgroundImage="bar-now-playing.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="NowPlayingClicked:" destination="qUc-RQ-z6p" eventType="touchUpInside" id="rS1-Dd-fh8"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.5" contentMode="scaleToFill" id="aqQ-J8-uDP" userLabel="overlay">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="412"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="vUn-Hd-z04" userLabel="bigloading">
+                                        <rect key="frame" x="141" y="214" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <tabBar contentMode="scaleAspectFill" id="3eG-Wg-Lzi">
+                                <rect key="frame" x="-1" y="412" width="322" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="All" image="all.png" id="TQy-9k-nO7"/>
+                                    <tabBarItem title="Friends" image="friends.png" id="ufs-gH-6cw"/>
+                                    <tabBarItem title="Go Live" image="golive.png" id="v0o-l0-mm6"/>
+                                    <tabBarItem title="Hot" image="hot.png" id="bbB-of-QBU"/>
+                                    <tabBarItem title="Me" image="me.png" id="P59-ZD-6Jb"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="qUc-RQ-z6p" id="Pwr-LN-wGv"/>
+                                </connections>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pBa-VC-6YB">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="3gd-TE-DQY">
+                            <connections>
+                                <action selector="LogoutClicked:" destination="qUc-RQ-z6p" id="2wI-Gc-sqd"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="Cps-U0-aqB">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Broadcasts" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="aIF-03-ukB" userLabel="title">
+                                    <rect key="frame" x="-3" y="-4" width="134" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="8Hy-rv-yBC" userLabel="subtitle">
+                                    <rect key="frame" x="43" y="17" width="42" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activity" destination="vUn-Hd-z04" id="gTk-Jv-aoT"/>
+                        <outlet property="activity_bg" destination="aqQ-J8-uDP" id="9DM-FE-uQJ"/>
+                        <outlet property="all_list" destination="TQy-9k-nO7" id="XvH-mE-3Vp"/>
+                        <outlet property="friends_list" destination="ufs-gH-6cw" id="zVc-1c-wHX"/>
+                        <outlet property="hot_list" destination="bbB-of-QBU" id="a96-Av-sf1"/>
+                        <outlet property="mine_list" destination="P59-ZD-6Jb" id="hQI-l0-Odq"/>
+                        <outlet property="nowPlayingButton" destination="wzk-9j-AUy" id="NPr-Ri-oGZ"/>
+                        <outlet property="now_playing" destination="wzk-9j-AUy" id="lF7-zh-ijR"/>
+                        <outlet property="subTitle" destination="8Hy-rv-yBC" id="xFm-yy-uBx"/>
+                        <outlet property="tabBar" destination="3eG-Wg-Lzi" id="l9U-SB-e3t"/>
+                        <outlet property="tview" destination="pV9-ok-2Fp" id="J8P-ja-MrC"/>
+                        <segue destination="G8h-VC-3NX" kind="push" identifier="goToRec" id="C7P-PO-qro"/>
+                        <segue destination="eg4-It-rfa" kind="push" identifier="goToPlayer" id="sX9-fB-Rgc"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1713" y="8"/>
+        </scene>
+        <scene sceneID="jBh-d2-Ab9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oxH-rF-9fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="G8h-VC-3NX" customClass="RecViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" id="IeJ-pK-c7Z">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lightblue-texture.png" id="pVn-Co-seV">
+                                <rect key="frame" x="-5" y="-4" width="331" height="433"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="UPu-qN-aAQ" userLabel="seconds_label">
+                                <rect key="frame" x="228" y="91" width="77" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.31372549020000001" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CEZ-Bv-QiZ">
+                                <rect key="frame" x="11" y="52" width="211" height="45"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="broadcast1.png">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" image="broadcast3.png"/>
+                                <state key="highlighted" image="broadcast2.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRec_Clicked:" destination="tYH-MU-93G" eventType="touchUpInside" id="CLN-vK-T3T"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="back-comments-recorder.png" id="prP-ns-qSm" userLabel="comments background">
+                                <rect key="frame" x="11" y="115" width="297" height="291"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <tableView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="40" sectionHeaderHeight="0.0" sectionFooterHeight="0.0" id="ZF0-Jd-vln" userLabel="Comments Table">
+                                <rect key="frame" x="10" y="137" width="297" height="269"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Listeners: 0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="0mF-hg-wHb" userLabel="NumListeners">
+                                <rect key="frame" x="203" y="115" width="101" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.31372549020000001" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comments" lineBreakMode="tailTruncation" minimumFontSize="10" id="3I1-3g-jDf" userLabel="ListenersLabel">
+                                <rect key="frame" x="19" y="115" width="78" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.31372549020000001" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qkm-sh-mt6" userLabel="fbButton">
+                                <rect key="frame" x="220" y="46" width="51" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="facebook_share.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="facebook_share_on.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fbButtonClicked:" destination="tYH-MU-93G" eventType="touchUpInside" id="6Ie-fQ-yJF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EDy-c6-7zS" userLabel="twButton">
+                                <rect key="frame" x="260" y="43" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="twitter_share.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="twitter_share_on.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twButtonClicked:" destination="tYH-MU-93G" eventType="touchUpInside" id="Jyl-9t-Xy7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter broadcast title..." adjustsFontSizeToFit="NO" minimumFontSize="17" id="42H-DL-CgL" userLabel="broadcastTitle">
+                                <rect key="frame" x="11" y="12" width="296" height="31"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vumeter.png" id="Zij-sB-dms">
+                                <rect key="frame" x="11" y="95" width="210" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="IBP-ar-fxO" customClass="AQLevelMeter">
+                                <rect key="frame" x="16" y="99" width="198" height="5"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                        </accessibility>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Broadcast" id="ayO-34-xrS">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3u9-Se-fez">
+                            <connections>
+                                <action selector="BackButtonClicked:" destination="G8h-VC-3NX" id="GQo-v7-XFf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="comment_controller" destination="91N-af-9Jn" id="Q3T-zG-7gf"/>
+                        <outlet property="controller" destination="tYH-MU-93G" id="9f1-oi-wXB"/>
+                        <outlet property="fbButton" destination="Qkm-sh-mt6" id="gPO-5M-bus"/>
+                        <outlet property="twButton" destination="EDy-c6-7zS" id="0gF-8w-gGW"/>
+                    </connections>
+                </viewController>
+                <customObject id="tYH-MU-93G" customClass="RecController">
+                    <connections>
+                        <outlet property="backButton" destination="3u9-Se-fez" id="a7E-DQ-Kh2"/>
+                        <outlet property="bcast_title" destination="42H-DL-CgL" id="iPW-SE-6bB"/>
+                        <outlet property="cc" destination="91N-af-9Jn" id="qQv-48-PtL"/>
+                        <outlet property="fbButton" destination="Qkm-sh-mt6" id="ckM-w7-sdH"/>
+                        <outlet property="lvlMeter_in" destination="IBP-ar-fxO" id="G8D-iQ-eaP"/>
+                        <outlet property="recButton" destination="CEZ-Bv-QiZ" id="vxB-9a-sJR"/>
+                        <outlet property="seconds_label" destination="UPu-qN-aAQ" id="peZ-My-Lcj"/>
+                        <outlet property="twButton" destination="EDy-c6-7zS" id="gcz-n2-JsV"/>
+                    </connections>
+                </customObject>
+                <customObject id="91N-af-9Jn" customClass="CommentsController">
+                    <connections>
+                        <outlet property="listeners" destination="0mF-hg-wHb" id="QoT-ll-aEk"/>
+                        <outlet property="view" destination="ZF0-Jd-vln" id="sog-ze-4Ef"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="752" y="624"/>
+        </scene>
+        <scene sceneID="ddH-zw-vl5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qS0-LI-04l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="eg4-It-rfa" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dH9-4c-473">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" id="YOD-mS-4fQ">
+                                <rect key="frame" x="288" y="236" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" id="I0G-vu-qsh">
+                                <rect key="frame" x="0.0" y="-51" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Now Playing" id="a7L-Mk-oap">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hfX-mQ-6Bt"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lightblue-texture.png" id="npP-aa-LFS">
+                                <rect key="frame" x="-20" y="-60" width="348" height="520"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="naJ-a2-Kl4" userLabel="pimage">
+                                <rect key="frame" x="30" y="-7" width="261" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="JX3-69-vWJ">
+                                <rect key="frame" x="0.0" y="145" width="320" height="123"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="headphones-user.png" id="lSr-S3-qD7">
+                                        <rect key="frame" x="120" y="59" width="15" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="10" id="VbL-pY-KVv" userLabel="listeners_str">
+                                        <rect key="frame" x="142" y="55" width="52" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <color key="textColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="17 hours ago" lineBreakMode="tailTruncation" minimumFontSize="12" id="7sU-Vn-pRi" userLabel="time_str">
+                                        <rect key="frame" x="11" y="54" width="78" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                        <color key="textColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background-button.png" id="GDP-Ml-gHl">
+                                        <rect key="frame" x="246" y="5" width="69" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fST-jU-vuK" userLabel="play">
+                                        <rect key="frame" x="247" y="5" width="69" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" image="playButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="PlayPauseButtonClicked:" destination="eg4-It-rfa" eventType="touchUpInside" id="1cg-ba-90u"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oN9-aA-ejs" customClass="AutoScrollLabel">
+                                        <rect key="frame" x="10" y="67" width="232" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </scrollView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Kate Moss" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="0hO-bm-BTd" userLabel="Username">
+                                        <rect key="frame" x="11" y="0.0" width="236" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <size key="shadowOffset" width="2" height="2"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="live-button.png" id="tFh-nX-iqT">
+                                        <rect key="frame" x="10" y="57" width="37" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="white-texture.png" id="c3p-am-ee4">
+                                <rect key="frame" x="0.0" y="266" width="320" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="0.0" sectionFooterHeight="0.0" id="KKo-de-6LL" userLabel="Comments">
+                                <rect key="frame" x="0.0" y="291" width="320" height="176"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TQb-9Q-sYf" id="eZm-5F-j30"/>
+                                    <outlet property="delegate" destination="TQb-9Q-sYf" id="UWO-N5-lGr"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="enter-comments.png" id="tUv-dX-klz">
+                                <rect key="frame" x="-2" y="247" width="325" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your comment ..." minimumFontSize="17" id="Owc-Go-pYU" userLabel="Comment_txt">
+                                <rect key="frame" x="13" y="255" width="273" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                                <connections>
+                                    <action selector="PostComment:" destination="eg4-It-rfa" eventType="editingDidEndOnExit" id="SLJ-FI-D2a"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow-red.png" id="TIT-E9-rbQ">
+                                <rect key="frame" x="36" y="326" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Be the first to comment!" lineBreakMode="tailTruncation" minimumFontSize="10" id="Veb-Ig-Rgi">
+                                <rect key="frame" x="68" y="291" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.41960784309999999" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dIV-l3-Y2f">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="DUI-Y3-2Na">
+                            <connections>
+                                <action selector="BackButtonClicked:" destination="eg4-It-rfa" id="NIN-xz-PlR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="arrow_comments" destination="TIT-E9-rbQ" id="J7G-A2-zhC"/>
+                        <outlet property="bg_post_comment" destination="tUv-dX-klz" id="qbd-vH-yIj"/>
+                        <outlet property="comment_controller" destination="TQb-9Q-sYf" id="Tcp-bR-6yS"/>
+                        <outlet property="comment_txt" destination="Owc-Go-pYU" id="R3T-VC-jz0"/>
+                        <outlet property="descriptionView" destination="oN9-aA-ejs" id="O87-mY-qef"/>
+                        <outlet property="label_comments" destination="Veb-Ig-Rgi" id="AzD-Px-Q8y"/>
+                        <outlet property="listenersView" destination="VbL-pY-KVv" id="ONX-nb-1Z6"/>
+                        <outlet property="live" destination="tFh-nX-iqT" id="WRf-d9-M0r"/>
+                        <outlet property="pimage" destination="naJ-a2-Kl4" id="nhf-m0-QuO"/>
+                        <outlet property="playButton" destination="fST-jU-vuK" id="oPR-Rs-Cff"/>
+                        <outlet property="spinner" destination="YOD-mS-4fQ" id="x3W-0x-KDb"/>
+                        <outlet property="time_strView" destination="7sU-Vn-pRi" id="5ZF-eI-k9V"/>
+                        <outlet property="usernameView" destination="0hO-bm-BTd" id="HbE-Az-Hcb"/>
+                    </connections>
+                </viewController>
+                <customObject id="TQb-9Q-sYf" customClass="CommentsControllerPlayer">
+                    <connections>
+                        <outlet property="arrow_comments" destination="TIT-E9-rbQ" id="20e-RA-qco"/>
+                        <outlet property="label_comments" destination="Veb-Ig-Rgi" id="uDb-VD-T8d"/>
+                        <outlet property="listeners" destination="VbL-pY-KVv" id="PXr-VM-j6y"/>
+                        <outlet property="tview" destination="KKo-de-6LL" id="isU-1r-GS8"/>
+                        <outlet property="view" destination="KKo-de-6LL" id="VsU-n5-GRt"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1187" y="624"/>
+        </scene>
+        <scene sceneID="HjA-7d-CrE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-Hn-M3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Kjd-yA-W5T" customClass="LoginController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spE-7c-GA9">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="background_plain.png" id="WZh-Fc-BlJ" userLabel="background">
+                                <rect key="frame" x="0.0" y="-54" width="320" height="558"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="logo-medium.png" id="2sk-FU-1d8" userLabel="medium_logo">
+                                <rect key="frame" x="49" y="60" width="223" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="container-icons.png" id="gfL-58-uEY">
+                                <rect key="frame" x="40" y="332" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Login using" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="LVE-hA-ZEL">
+                                <rect key="frame" x="73" y="284" width="175" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PDe-VM-Y3Z">
+                                <rect key="frame" x="73" y="362" width="80" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="facebook-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFacebookLogin:" destination="Kjd-yA-W5T" eventType="touchUpInside" id="3Gb-ci-f5I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Ty-5M-wE7">
+                                <rect key="frame" x="168" y="362" width="80" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="twitter-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BIf-d2-xG9" kind="push" id="mCc-nN-gAK"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="CL6-lI-h0D">
+                                <rect key="frame" x="142" y="239" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yMl-QM-rdL"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="spinner" destination="CL6-lI-h0D" id="wYC-Yu-ff8"/>
+                        <segue destination="qUc-RQ-z6p" kind="push" identifier="goToTimeline" id="WXZ-2v-155"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="868" y="-73"/>
+        </scene>
+        <scene sceneID="unc-YQ-QvO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRe-b9-qXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="cEb-gt-zWd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FYM-tD-TSN"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="f4Y-Ls-fHi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kjd-yA-W5T" kind="relationship" relationship="rootViewController" id="ppS-IA-YeS"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="342" y="-73"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="all.png" width="30" height="30"/>
+        <image name="arrow-red.png" width="44" height="44"/>
+        <image name="back-comments-recorder.png" width="584" height="578"/>
+        <image name="background-button.png" width="102" height="102"/>
+        <image name="background_plain.png" width="640" height="960"/>
+        <image name="bar-now-playing.png" width="640" height="65"/>
+        <image name="broadcast1.png" width="424" height="88"/>
+        <image name="broadcast2.png" width="424" height="88"/>
+        <image name="broadcast3.png" width="424" height="88"/>
+        <image name="container-icons.png" width="376" height="231"/>
+        <image name="enter-comments.png" width="640" height="86"/>
+        <image name="facebook-icon.png" width="159" height="136"/>
+        <image name="facebook_share.png" width="100" height="100"/>
+        <image name="facebook_share_on.png" width="100" height="100"/>
+        <image name="friends.png" width="30" height="30"/>
+        <image name="golive.png" width="70" height="60"/>
+        <image name="headphones-user.png" width="24" height="24"/>
+        <image name="hot.png" width="30" height="30"/>
+        <image name="lightblue-texture.png" width="448" height="640"/>
+        <image name="live-button.png" width="59" height="27"/>
+        <image name="login.png" width="308" height="194"/>
+        <image name="logo-medium.png" width="402" height="271"/>
+        <image name="me.png" width="30" height="30"/>
+        <image name="playButton.png" width="102" height="102"/>
+        <image name="textbox.png" width="523" height="63"/>
+        <image name="twitter-icon.png" width="159" height="136"/>
+        <image name="twitter_share.png" width="110" height="110"/>
+        <image name="twitter_share_on.png" width="110" height="110"/>
+        <image name="vumeter.png" width="413" height="22"/>
+        <image name="white-texture.png" width="640" height="297"/>
+    </resources>
+    <classes>
+        <class className="AQLevelMeter" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AQLevelMeter.h"/>
+        </class>
+        <class className="AutoScrollLabel" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutoScrollLabel.h"/>
+        </class>
+        <class className="CommentsController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cell" candidateClass="MainCell"/>
+                <relationship kind="outlet" name="listeners" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CommentsControllerPlayer" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsControllerPlayer.h"/>
+            <relationships>
+                <relationship kind="outlet" name="arrow_comments" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cell" candidateClass="MainCell"/>
+                <relationship kind="outlet" name="label_comments" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="listeners" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="LoginController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
+            <relationships>
+                <relationship kind="action" name="doFacebookLogin:"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="MainCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="img" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="img_bottom" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="time_ago" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txt" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="PlayerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="BackButtonClicked:"/>
+                <relationship kind="action" name="PlayPauseButtonClicked:"/>
+                <relationship kind="action" name="PostComment:"/>
+                <relationship kind="outlet" name="arrow_comments" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bg_post_comment" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="comment_controller" candidateClass="CommentsControllerPlayer"/>
+                <relationship kind="outlet" name="comment_txt" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="AutoScrollLabel"/>
+                <relationship kind="outlet" name="label_comments" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="listenersView" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="live" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pimage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="time_strView" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="usernameView" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RecController" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnRec_Clicked:"/>
+                <relationship kind="action" name="fbButtonClicked:"/>
+                <relationship kind="action" name="twButtonClicked:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="bcast_title" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cc" candidateClass="CommentsController"/>
+                <relationship kind="outlet" name="fbButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lvlMeter_in" candidateClass="AQLevelMeter"/>
+                <relationship kind="outlet" name="recButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="seconds_label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="twButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="RecViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="BackButtonClicked:"/>
+                <relationship kind="outlet" name="comment_controller" candidateClass="CommentsController"/>
+                <relationship kind="outlet" name="controller" candidateClass="RecController"/>
+                <relationship kind="outlet" name="fbButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="twButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TWLoginController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TWLoginController.h"/>
+            <relationships>
+                <relationship kind="action" name="doTwitterLogin:"/>
+                <relationship kind="outlet" name="err_msg" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginTwitter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mediumLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="passField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="userField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TimelineCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimelineCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatar" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="desc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="details" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="live" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="time_str" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="username" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TimelineViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimelineViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LogoutClicked:"/>
+                <relationship kind="action" name="NowPlayingClicked:"/>
+                <relationship kind="outlet" name="activity" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="activity_bg" candidateClass="UIView"/>
+                <relationship kind="outlet" name="all_list" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="cell" candidateClass="TimelineCell"/>
+                <relationship kind="outlet" name="friends_list" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="go_live" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="hot_list" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="mine_list" candidateClass="UITabBarItem"/>
+                <relationship kind="outlet" name="nowPlayingButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="now_playing" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="subTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
+                <relationship kind="outlet" name="tview" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WXZ-2v-155"/>
+    </inferredMetricsTieBreakers>
+</document>
